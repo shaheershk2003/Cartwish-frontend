@@ -3,6 +3,7 @@ import UserContext from '../../contexts/UserContext'
 import './CartPage.css'
 import remove from '../../assets/remove.png'
 import Table from '../Common/Table'
+import config from '../../config.json'
 import QuantityInput from '../SingleProduct/QuantityInput'
 import CartContext from '../../contexts/CartContext'
 import { checkoutAPI } from '../../services/orderServices'
@@ -33,7 +34,7 @@ const CartPage = () => {
   return (
     <section className='align_center cart_page'>
         <div className="align_center user_info">
-            <img src={`http://localhost:5000/profile/${userObj?.profilePic}`} alt="user profile" />
+            <img src={`${config.backendURL}/profile/${userObj?.profilePic}`} alt="user profile" />
             <div>
                 <p className="user_name">Name: {userObj?.name}</p>
                 <p className="user_email">Email: {userObj?.email}</p>
